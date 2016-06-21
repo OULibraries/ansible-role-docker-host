@@ -1,0 +1,5 @@
+---
+# tasks file for docker-host
+- include: yum.yml
+- include: pip.yml
+- include: services.yml
