@@ -4,5 +4,5 @@
     name: "{{ item }}"
     state: present
   with_items:
-  - docker
+  - docker-engine
   - python-pip

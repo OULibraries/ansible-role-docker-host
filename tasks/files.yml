@@ -1,0 +1,17 @@
+---
+- name: copy file
+  copy:
+    src="files/{{ item }}"
+    dest="/etc/yum.repos.d/{{ item }}"
+  with_items:
+   - docker.repo
+
+- name: Creates directory
+  file: path=/etc/systemd/system/docker.service.d state=directory
+
+- name: copy file
+  copy:
+    src="files/{{ item }}"
+    dest="/etc/systemd/system/docker.service.d/{{ item }}"
+  with_items:
+   - storage.conf
