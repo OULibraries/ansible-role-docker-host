@@ -4,3 +4,4 @@
 - include: yum.yml
 - include: pip.yml
 - include: services.yml
+- include: final.yml
