@@ -1,2 +1,4 @@
 ---
-- command: usermod -aG docker vagrant
+- name: If vagrant user will add docker group 
+  command: usermod -aG docker vagrant
+  ignore_errors: yes
