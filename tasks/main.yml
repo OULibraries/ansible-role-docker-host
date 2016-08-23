@@ -1,6 +1,5 @@
 ---
 # tasks file for docker-host
-- include: files.yml
 - include: yum.yml
 - include: pip.yml
 - include: configure.yml
