@@ -1,4 +1,12 @@
 ---
+- name: Configure Docker official repository
+  yum_repository:
+    name: docker 
+    description: Docker Official Repository
+    baseurl: https://yum.dockerproject.org/repo/main/centos/7/
+    gpgkey: https://yum.dockerproject.org/gpg
+    gpgcheck: yes
+    enabled: yes
 - name: Install yum packages
   yum:
     name: "{{ item }}"

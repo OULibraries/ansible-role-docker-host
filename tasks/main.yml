@@ -3,5 +3,5 @@
 - include: files.yml
 - include: yum.yml
 - include: pip.yml
+- include: configure.yml
 - include: services.yml
-- include: final.yml
