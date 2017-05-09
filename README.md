@@ -24,7 +24,7 @@ Example Playbook
 License
 -------
 
-TBD
+[MIT](https://github.com/OULibraries/ansible-role-docker-host/blob/master/LICENSE)
 
 Author Information
 ------------------
