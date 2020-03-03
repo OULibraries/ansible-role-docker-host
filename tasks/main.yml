@@ -21,7 +21,7 @@
       - docker-engine
     state: absent
 
-- name: Confgigure Docker CE 
+- name: Configure Docker CE
   shell: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 - name: Install Docker CE packages
@@ -32,13 +32,14 @@
       - containerd.io
     state: present
     
-- name: Install docker-compose for system Python 3  
+- name: Install docker-compose for system Python 3
   pip:
     executable: pip3
     name: docker-compose
     state: present
 
 - name: Run Docker on boot
+  notify: start docker
   service:
     name: docker
     enabled: yes

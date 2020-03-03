@@ -1,2 +1,7 @@
 ---
-# handlers file for docker-host
+- name: start docker
+  tags:
+    - molecule-notest
+  service:
+    name: docker
+    state: started
