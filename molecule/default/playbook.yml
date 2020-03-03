@@ -1,0 +1,6 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - role: OULibraries.python3
+    - role: OULibraries.docker-host
