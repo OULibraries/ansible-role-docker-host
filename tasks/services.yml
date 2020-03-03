@@ -1,8 +1,0 @@
----
-- name: Run Docker service on boot
-  service:
-    name: "{{ item }}"
-    state: started
-    enabled: yes
-  with_items:
-  - docker
