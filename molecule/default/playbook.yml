@@ -1,6 +1,10 @@
 ---
 - name: Converge
   hosts: all
+  vars:
+    python3_pip_pkgs: 
+      - docker-compose
+  
   roles:
     - role: OULibraries.python3
     - role: OULibraries.docker-host
