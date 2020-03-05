@@ -1,5 +1,5 @@
 ---
-- name: Install requirements 
+- name: Install requirements
   yum:
     name:
       # yum-utils provides the yum-config-manager utility
@@ -20,7 +20,9 @@
     state: absent
 
 - name: Configure Docker CE
-  shell: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  command:
+    cmd: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    creates: /etc/yum.repos.d/docker-ce.repo
 
 - name: Install Docker CE packages
   yum:
