@@ -1,2 +1,8 @@
 ---
-# defaults file for docker-host
+
+docker_pkg_state: present
+  
+docker_svc_state: started
+
+docker_svc_enabled: true
+

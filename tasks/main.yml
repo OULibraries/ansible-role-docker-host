@@ -30,10 +30,11 @@
       - docker-ce
       - docker-ce-cli
       - containerd.io
-    state: present
+    state: "{{ docker_pkg_state }}"
 
 - name: Run Docker on boot
   notify: start docker
   service:
     name: docker
-    enabled: yes
+    enabled: "{{ docker_svc_enabled }}"
+    state: "{{ docker_svc_state }}"

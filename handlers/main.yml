@@ -4,4 +4,4 @@
     - molecule-notest
   service:
     name: docker
-    state: started
+    state: "{{ docker_svc_state }}"
