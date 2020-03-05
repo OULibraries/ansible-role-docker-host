@@ -1,6 +1,40 @@
 ---
-# tasks file for docker-host
-- include: yum.yml
-- include: pip.yml
-- include: configure.yml
-- include: services.yml
+- name: Install requirements
+  yum:
+    name:
+      # yum-utils provides the yum-config-manager utility
+      - yum-utils
+      # device-mapper-persistent-data and lvm2 are required by docker's
+      # devicemapper storage driver
+      - device-mapper-persistent-data
+      - lvm2
+    state:
+      present
+
+- name: Uninstall deprecated Docker packages
+  package:
+    name:
+      - docker
+      - docker-common
+      - docker-engine
+    state: absent
+
+- name: Configure Docker CE
+  command:
+    cmd: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    creates: /etc/yum.repos.d/docker-ce.repo
+
+- name: Install Docker CE packages
+  yum:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+    state: "{{ docker_pkg_state }}"
+
+- name: Run Docker on boot
+  notify: start docker
+  service:
+    name: docker
+    enabled: "{{ docker_svc_enabled }}"
+    state: "{{ docker_svc_state }}"

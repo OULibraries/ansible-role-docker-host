@@ -1,0 +1,5 @@
+---
+- src: https://github.com/OULibraries/ansible-role-python3
+  version: master
+  name: OULibraries.python3
+

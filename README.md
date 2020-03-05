@@ -1,8 +1,7 @@
 OULibraries.docker-host
 =========
 
-Docker host for OU Libraries.
-This simple role just installs docker and the python libs required to manage it from ansible.
+Installs Docker CE from the Docker provided packages.
 
 Requirements
 ------------
@@ -20,13 +19,17 @@ Dependencies
 Example Playbook
 ----------------
 
+- hosts: all
+  roles:
+   - OULibraries.docker-host
+
 
 License
 -------
 
-[MIT](https://github.com/OULibraries/ansible-role-docker-host/blob/master/LICENSE)
+BSD
 
 Author Information
 ------------------
+OU Libraries
 
-jsherman@ou.edu
