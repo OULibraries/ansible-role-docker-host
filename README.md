@@ -25,9 +25,9 @@ None, but this role may be used in conjunction with [OULibraries.python3](https:
 Example Playbook
 ----------------
 
-- hosts: all
-  roles:
-   - OULibraries.docker-host
+    - hosts: all
+      roles:
+       - OULibraries.docker-host
 
 
 License
