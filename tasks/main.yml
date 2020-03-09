@@ -19,7 +19,7 @@
       - docker-engine
     state: absent
 
-- name: Configure Docker CE
+- name: Configure Docker CE package repository
   command:
     cmd: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
     creates: /etc/yum.repos.d/docker-ce.repo
