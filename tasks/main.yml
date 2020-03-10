@@ -28,7 +28,7 @@
   yum:
     name:
       - "docker-ce-{{ docker_version }}"
-      - docker-ce-cli
+      - "docker-ce-cli-{{ docker_version }}"
       - containerd.io
     state: "{{ docker_pkg_state }}"
 
