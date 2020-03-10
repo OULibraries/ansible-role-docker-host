@@ -2,6 +2,8 @@
 
 docker_version: "{{ 9.03.7 }}"
 
+docker_package: "docker-ce-{{ docker_version }}"
+
 docker_pkg_state: present
   
 docker_svc_state: started
