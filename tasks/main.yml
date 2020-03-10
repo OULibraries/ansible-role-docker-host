@@ -27,8 +27,8 @@
 - name: Install Docker CE packages
   yum:
     name:
-      - docker-ce
-      - docker-ce-cli
+      - "docker-ce-{{ docker_version }}"
+      - "docker-ce-cli-{{ docker_version }}"
       - containerd.io
     state: "{{ docker_pkg_state }}"
 

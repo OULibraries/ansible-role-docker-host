@@ -1,5 +1,7 @@
 ---
 
+docker_version: 19.03.7 
+
 docker_pkg_state: present
   
 docker_svc_state: started
