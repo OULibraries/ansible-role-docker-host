@@ -1,15 +1,10 @@
 ---
 
-docker_edition: 'ce'
-docker_package: "docker-{{ docker_edition }}"
-docker_version: "{{ docker_package }}-19.03.7"
+docker_version: "{{ 9.03.7 }}"
+
 docker_pkg_state: present
   
 docker_svc_state: started
+
 docker_svc_enabled: true
-
-docker_install_compose: true
-docker_compose_version: "1.25.4"
-docker_compose_path: /opt/python3/bin/docker-compose
-
 
