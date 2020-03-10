@@ -1,8 +1,6 @@
 ---
 
-docker_version: "{{ 9.03.7 }}"
-
-docker_package: "docker-ce-{{ docker_version }}"
+docker_version: "{{ 19.03.7 }}"
 
 docker_pkg_state: present
   
